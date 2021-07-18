@@ -1,12 +1,15 @@
 #ifndef GOOGLE_AUTHORIZATION_H 
 #define GOOGLE_AUTHORIZATION_H
 
+#include <Usage.h>
+
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
 #include <httplib.h>
-#include <Authorization.h>
 #include <Codable.h>
 #include <JSON.h>
+#include <Authorization.h>
+#include <iostream>
 
 #define GOOGLE_AUTH_PREFIX "G"
 
@@ -43,6 +46,7 @@ public:
 
 class GoogleProvider: public AuthorizationProvider {
 public:
+#ifdef SERVER
 	string client_id;
 
 	AuthorizationResponse authorize(string body) {
@@ -87,6 +91,15 @@ public:
 	GoogleProvider(string client_id) {
 		this->client_id = client_id;
 	}
+#endif
+
+#ifdef CLIENT
+	string generateRequest(string body) {
+		return GOOGLE_AUTH_PREFIX + body;
+	}
+
+	GoogleProvider() {}
+#endif
 };
 
 #endif

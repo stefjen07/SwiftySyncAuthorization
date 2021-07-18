@@ -1,6 +1,8 @@
 #ifndef FACEBOOK_AUTHORIZATION_H
 #define FACEBOOK_AUTHORIZATION_H
 
+#include <Usage.h>
+
 #include <Authorization.h>
 #include <Codable.h>
 #include <JSON.h>
@@ -35,6 +37,7 @@ public:
 
 class FacebookProvider: public AuthorizationProvider {
 public:
+#ifdef SERVER
 	string access_token;
 	string app_id;
 
@@ -82,6 +85,15 @@ public:
 		this->access_token = access_token;
 		this->app_id = app_id;
 	}
+#endif
+
+#ifdef CLIENT
+	string generateRequest(string body) {
+		return FACEBOOK_AUTH_PREFIX + body;
+	}
+
+	FacebookProvider() {}
+#endif
 };
 
 #endif

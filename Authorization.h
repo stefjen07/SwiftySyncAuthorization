@@ -1,6 +1,8 @@
 #ifndef AUTHORIZATION_H
 #define AUTHORIZATION_H
 
+#include <Usage.h>
+
 #include <string>
 
 #define AUTHORIZED_LOCALIZE "S"
@@ -27,13 +29,32 @@ public:
 		this->userId = userId;
 	}
 
-	AuthorizationResponse() {}
+	AuthorizationResponse() {
+		status = AuthorizationStatus::error;
+	}
 };
 
 class AuthorizationProvider {
 public:
+#ifdef SERVER
 	virtual AuthorizationResponse authorize(string body) = 0;
 	virtual bool isValid(string body) = 0;
+#endif
+#ifdef CLIENT
+	virtual string generateRequest(string body) = 0;
+
+	void handleRespond(string body) {
+		if (body == AUTHORIZED_LOCALIZE) {
+
+		}
+		else if (body == CORR_CRED_LOCALIZE) {
+
+		}
+		else if (body == AUTH_ERR_LOCALIZE) {
+
+		}
+	}
+#endif
 };
 
 #endif
