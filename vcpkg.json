@@ -1,0 +1,8 @@
+{
+  "name": "swifty-sync-authorization",
+  "version-string": "1.0.0",
+  "description": "",
+  "dependencies": [
+    "openssl"
+  ]
+}
