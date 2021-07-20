@@ -2,14 +2,11 @@
 #define AUTHORIZATION_H
 
 #include <Usage.h>
-
 #include <string>
 
 #define AUTHORIZED_LOCALIZE "S"
 #define CORR_CRED_LOCALIZE "C"
 #define AUTH_ERR_LOCALIZE "E"
-
-//#define AUTH_DEBUG
 
 using namespace std;
 
@@ -42,18 +39,6 @@ public:
 #endif
 #ifdef CLIENT
 	virtual string generateRequest(string body) = 0;
-
-	void handleRespond(string body) {
-		if (body == AUTHORIZED_LOCALIZE) {
-
-		}
-		else if (body == CORR_CRED_LOCALIZE) {
-
-		}
-		else if (body == AUTH_ERR_LOCALIZE) {
-
-		}
-	}
 #endif
 };
 

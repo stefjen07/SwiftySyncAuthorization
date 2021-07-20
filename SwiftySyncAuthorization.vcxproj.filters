@@ -24,15 +24,15 @@
     <ClInclude Include="GoogleAuthorization.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Usage\Usage.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CodablePP\src\Codable.cpp">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
-    <ClCompile Include="CodablePP\src\JSON.cpp">
+    <ClCompile Include="CodablePP\JSON.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
