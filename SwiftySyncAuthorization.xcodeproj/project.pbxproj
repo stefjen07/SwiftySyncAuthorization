@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EEC264B26AC7F5E0035C489 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC264A26AC7F5E0035C489 /* main.cpp */; };
+		3EEC265326AC87610035C489 /* JSON.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC265126AC87610035C489 /* JSON.cpp */; };
+		3EEC265826AC8D850035C489 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEC265626AC8D850035C489 /* libcrypto.a */; };
+		3EEC265926AC8D850035C489 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EEC265726AC8D850035C489 /* libssl.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3EEC263E26AC7EB20035C489 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3EEC264026AC7EB20035C489 /* SwiftySyncAuthorization */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftySyncAuthorization; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EEC264A26AC7F5E0035C489 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3EEC264C26AC86750035C489 /* FacebookAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookAuthorization.h; sourceTree = "<group>"; };
+		3EEC264D26AC86750035C489 /* GoogleAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleAuthorization.h; sourceTree = "<group>"; };
+		3EEC264E26AC86750035C489 /* Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Authorization.h; sourceTree = "<group>"; };
+		3EEC264F26AC87010035C489 /* Usage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Usage.h; sourceTree = "<group>"; };
+		3EEC265026AC87610035C489 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = CodablePP/JSON.h; sourceTree = "<group>"; };
+		3EEC265126AC87610035C489 /* JSON.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = JSON.cpp; path = CodablePP/JSON.cpp; sourceTree = "<group>"; };
+		3EEC265226AC87610035C489 /* Codable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codable.h; path = CodablePP/Codable.h; sourceTree = "<group>"; };
+		3EEC265426AC87A70035C489 /* httplib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = httplib.h; path = "cpp-httplib/httplib.h"; sourceTree = "<group>"; };
+		3EEC265626AC8D850035C489 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "vcpkg_installed/x64-osx/lib/libcrypto.a"; sourceTree = "<group>"; };
+		3EEC265726AC8D850035C489 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "vcpkg_installed/x64-osx/lib/libssl.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EEC263D26AC7EB20035C489 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EEC265826AC8D850035C489 /* libcrypto.a in Frameworks */,
+				3EEC265926AC8D850035C489 /* libssl.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EEC263726AC7EB20035C489 = {
+			isa = PBXGroup;
+			children = (
+				3EEC265426AC87A70035C489 /* httplib.h */,
+				3EEC265226AC87610035C489 /* Codable.h */,
+				3EEC265126AC87610035C489 /* JSON.cpp */,
+				3EEC265026AC87610035C489 /* JSON.h */,
+				3EEC264E26AC86750035C489 /* Authorization.h */,
+				3EEC264C26AC86750035C489 /* FacebookAuthorization.h */,
+				3EEC264D26AC86750035C489 /* GoogleAuthorization.h */,
+				3EEC264A26AC7F5E0035C489 /* main.cpp */,
+				3EEC264F26AC87010035C489 /* Usage.h */,
+				3EEC264126AC7EB20035C489 /* Products */,
+				3EEC265526AC8D850035C489 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3EEC264126AC7EB20035C489 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEC264026AC7EB20035C489 /* SwiftySyncAuthorization */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EEC265526AC8D850035C489 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EEC265626AC8D850035C489 /* libcrypto.a */,
+				3EEC265726AC8D850035C489 /* libssl.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EEC263F26AC7EB20035C489 /* SwiftySyncAuthorization */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EEC264726AC7EB20035C489 /* Build configuration list for PBXNativeTarget "SwiftySyncAuthorization" */;
+			buildPhases = (
+				3EEC263C26AC7EB20035C489 /* Sources */,
+				3EEC263D26AC7EB20035C489 /* Frameworks */,
+				3EEC263E26AC7EB20035C489 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftySyncAuthorization;
+			productName = SwiftySyncAuthorization;
+			productReference = 3EEC264026AC7EB20035C489 /* SwiftySyncAuthorization */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EEC263826AC7EB20035C489 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					3EEC263F26AC7EB20035C489 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = 3EEC263B26AC7EB20035C489 /* Build configuration list for PBXProject "SwiftySyncAuthorization" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EEC263726AC7EB20035C489;
+			productRefGroup = 3EEC264126AC7EB20035C489 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EEC263F26AC7EB20035C489 /* SwiftySyncAuthorization */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EEC263C26AC7EB20035C489 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EEC264B26AC7F5E0035C489 /* main.cpp in Sources */,
+				3EEC265326AC87610035C489 /* JSON.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3EEC264526AC7EB20035C489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3EEC264626AC7EB20035C489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3EEC264826AC7EB20035C489 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4TJY8UCM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/vcpkg_installed/x64-osx/include/**";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = openssl;
+				LIBRARY_SEARCH_PATHS = (
+					"${SRCROOT}/vcpkg_installed/x64-osx/lib/**",
+					"$(PROJECT_DIR)/vcpkg_installed/x64-osx/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3EEC264926AC7EB20035C489 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S4TJY8UCM7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/vcpkg_installed/x64-osx/include/**";
+				INCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = openssl;
+				LIBRARY_SEARCH_PATHS = (
+					"${SRCROOT}/vcpkg_installed/x64-osx/lib/**",
+					"$(PROJECT_DIR)/vcpkg_installed/x64-osx/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EEC263B26AC7EB20035C489 /* Build configuration list for PBXProject "SwiftySyncAuthorization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EEC264526AC7EB20035C489 /* Debug */,
+				3EEC264626AC7EB20035C489 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EEC264726AC7EB20035C489 /* Build configuration list for PBXNativeTarget "SwiftySyncAuthorization" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EEC264826AC7EB20035C489 /* Debug */,
+				3EEC264926AC7EB20035C489 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EEC263826AC7EB20035C489 /* Project object */;
+}

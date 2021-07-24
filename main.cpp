@@ -1,11 +1,11 @@
-#include <GoogleAuthorization.h>
-#include <FacebookAuthorization.h>
-#include <Authorization.h>
-#include <iostream>
-
-using namespace std;
+#include "Authorization.h"
+#include "FacebookAuthorization.h"
+#include "GoogleAuthorization.h"
 
 int main() {
-	cout << "Hello world!" << endl;
-	return 0;
+    auto googleProvider = GoogleProvider();
+    auto facebookProvider = FacebookProvider();
+    
+    cout << "Hello world!";
+    return 0;
 }
