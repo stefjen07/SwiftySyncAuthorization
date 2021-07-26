@@ -1,3 +1,5 @@
 /.vs
 /vcpkg_installed
 /Debug
+/x64
+/cmake-build-debug
