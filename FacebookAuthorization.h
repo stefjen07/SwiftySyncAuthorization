@@ -27,9 +27,45 @@ public:
 	string access_token;
 	string app_id;
 
-	AuthorizationResponse authorize(string body);
+    AuthorizationResponse authorize(string body) {
+        string input_token = body;
+        AuthorizationResponse result;
+        result.status = AuthorizationStatus::error;
+        httplib::SSLClient cli("https://graph.facebook.com");
+        httplib::Params params;
+        params.emplace("input_token", input_token);
+        params.emplace("access_token", access_token);
 
-	bool isValid(string body);
+        auto response = cli.Post("/debug_token", params);
+
+        if (response == nullptr) {
+#ifdef AUTH_DEBUG
+            cout << "There is no response for request\n";
+#endif
+        }
+        else {
+            if (response->status == 200) {
+                JSONDecoder decoder;
+                auto container = decoder.container(response->body);
+                const auto decoded = container.decode(FacebookResponse(), "data");
+                if (to_string(decoded.app_id) == app_id) {
+                    result.status = AuthorizationStatus::authorized;
+                    result.userId = FACEBOOK_AUTH_PREFIX + to_string(decoded.user_id);
+                }
+            }
+            else {
+#ifdef AUTH_DEBUG
+                cout << "Request returned " << response->status << "\n";
+#endif
+            }
+        }
+
+        return result;
+    }
+
+    bool isValid(string body) {
+        return body.find(FACEBOOK_AUTH_PREFIX) == 0;
+    }
 
 	FacebookProvider(string access_token, string app_id) {
 		this->access_token = access_token;
