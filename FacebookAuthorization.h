@@ -3,6 +3,7 @@
 
 #include "Usage.h"
 
+#include "httplib.h"
 #include "Authorization.h"
 #include "Codable.h"
 #include "JSON.h"
