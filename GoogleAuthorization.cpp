@@ -66,9 +66,3 @@ bool GoogleProvider::isValid(string body) {
     return body.find(GOOGLE_AUTH_PREFIX) == 0;
 }
 #endif
-
-#ifdef CLIENT
-string GoogleProvider::generateRequest(string body) {
-    return GOOGLE_AUTH_PREFIX + body;
-}
-#endif

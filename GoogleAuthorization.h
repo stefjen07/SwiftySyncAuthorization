@@ -39,7 +39,9 @@ public:
 #endif
 
 #ifdef CLIENT
-	string generateRequest(string body);
+    string generateRequest(string body) {
+        return GOOGLE_AUTH_PREFIX + body;
+    }
 
 	GoogleProvider() {}
 #endif

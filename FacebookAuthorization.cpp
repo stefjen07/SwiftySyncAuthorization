@@ -62,9 +62,3 @@ bool FacebookProvider::isValid(string body) {
     return body.find(FACEBOOK_AUTH_PREFIX) == 0;
 }
 #endif
-
-#ifdef CLIENT
-string FacebookProvider::generateRequest(string body) {
-    return FACEBOOK_AUTH_PREFIX + body;
-}
-#endif

@@ -1,3 +1,4 @@
+#define CLIENT
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
 #include "GoogleAuthorization.h"
 #else
@@ -13,6 +14,9 @@
 int main() {
     auto googleProvider = GoogleProvider();
     auto facebookProvider = FacebookProvider();
+
+    cout << googleProvider.generateRequest("hello") << "\n";
+    cout << facebookProvider.generateRequest("hello") << "\n";
     
     cout << "Hello world!";
     return 0;

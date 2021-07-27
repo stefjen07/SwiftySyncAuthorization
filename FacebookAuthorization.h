@@ -38,7 +38,9 @@ public:
 #endif
 
 #ifdef CLIENT
-	string generateRequest(string body);
+    string generateRequest(string body) {
+        return FACEBOOK_AUTH_PREFIX + body;
+    }
 
 	FacebookProvider() {}
 #endif
