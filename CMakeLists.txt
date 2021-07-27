@@ -10,9 +10,11 @@ include_directories(Usage)
 include_directories(CodablePP)
 include_directories(cpp-httplib)
 
-add_library(SwiftySyncAuthorization Authorization.cpp Authorization.h FacebookAuthorization.cpp FacebookAuthorization.h GoogleAuthorization.cpp GoogleAuthorization.h)
-
 find_package(OpenSSL)
 include_directories(${OPENSSL_INCLUDE_DIR})
+
+add_library(SwiftySyncAuthorization Authorization.cpp Authorization.h FacebookAuthorization.cpp FacebookAuthorization.h GoogleAuthorization.cpp GoogleAuthorization.h)
+target_link_libraries(SwiftySyncAuthorization Codable ${OPENSSL_LIBRARIES})
+
 add_executable(test_auth main.cpp)
-target_link_libraries(test_auth SwiftySyncAuthorization ${OPENSSL_LIBRARIES})
+target_link_libraries(test_auth SwiftySyncAuthorization)
