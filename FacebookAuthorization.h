@@ -1,6 +1,8 @@
 #ifndef FACEBOOK_AUTHORIZATION_H
 #define FACEBOOK_AUTHORIZATION_H
 
+#define CPPHTTPLIB_OPENSSL_SUPPORT
+
 #include "Usage.h"
 
 #include "httplib.h"
