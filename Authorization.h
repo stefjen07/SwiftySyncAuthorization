@@ -4,6 +4,10 @@
 #include "Usage.h"
 #include <string>
 
+#ifdef SCAPIX_BRIDGE
+#include <scapix/bridge/object.h>
+#endif
+
 #define AUTHORIZED_LOCALIZE "S"
 #define CORR_CRED_LOCALIZE "C"
 #define AUTH_ERR_LOCALIZE "E"
@@ -16,7 +20,11 @@ enum class AuthorizationStatus {
 	error
 };
 
+#ifdef SCAPIX_BRIDGE
+class AuthorizationResponse: public scapix::bridge::object<AuthorizationResponse> {
+#else
 class AuthorizationResponse {
+#endif
 public:
 	AuthorizationStatus status;
 	string userId;
@@ -31,7 +39,11 @@ public:
 	}
 };
 
+#ifdef SCAPIX_BRIDGE
+class AuthorizationProvider: public scapix::bridge::object<AuthorizationResponse> {
+#else
 class AuthorizationProvider {
+#endif
 public:
 #ifdef SERVER
 	virtual AuthorizationResponse authorize(string body) = 0;
