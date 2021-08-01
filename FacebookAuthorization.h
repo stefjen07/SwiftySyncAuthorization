@@ -3,10 +3,6 @@
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
-#ifdef SCAPIX_BRIDGE
-#include <scapix/bridge/object.h>
-#endif
-
 #include "Usage.h"
 
 #include "httplib.h"
@@ -19,11 +15,7 @@
 
 using namespace std;
 
-#ifdef SCAPIX_BRIDGE
-class FacebookResponse: public Codable, scapix::bridge::object<AuthorizationResponse> {
-#else
-class FacebookResponse: public Codable {
-#endif
+class FacebookResponse : public Codable {
 public:
 	long long app_id, user_id, expires_at;
 
@@ -32,11 +24,7 @@ public:
 	void decode(CoderContainer* container);
 };
 
-#ifdef SCAPIX_BRIDGE
-class FacebookProvider: public AuthorizationProvider, scapix::bridge::object<AuthorizationResponse> {
-#else
 class FacebookProvider: public AuthorizationProvider {
-#endif
 public:
 #ifdef SERVER
 	string access_token;

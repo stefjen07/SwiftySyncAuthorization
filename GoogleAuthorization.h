@@ -5,10 +5,6 @@
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
-#ifdef SCAPIX_BRIDGE
-#include <scapix/bridge/object.h>
-#endif
-
 #include "httplib.h"
 #include "Codable.h"
 #include "JSON.h"
@@ -19,11 +15,7 @@
 
 using namespace std;
 
-#ifdef SCAPIX_BRIDGE
-class GoogleResponse: public Codable, scapix::bridge::object<AuthorizationResponse> {
-#else
-class GoogleResponse: public Codable {
-#endif
+class GoogleResponse : public Codable {
 public:
 	string iss, sub, azp, aud, iat, exp;
 
@@ -32,11 +24,7 @@ public:
 	void decode(CoderContainer* container);
 };
 
-#ifdef SCAPIX_BRIDGE
-class GoogleProvider: public AuthorizationProvider, scapix::bridge::object<AuthorizationResponse> {
-#else
 class GoogleProvider: public AuthorizationProvider {
-#endif
 public:
 #ifdef SERVER
 	string client_id;
