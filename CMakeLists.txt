@@ -13,5 +13,5 @@ add_library(SwiftySyncAuthorization Authorization.cpp Authorization.h FacebookAu
 target_link_libraries(SwiftySyncAuthorization Codable ${OPENSSL_LIBRARIES})
 target_include_directories(SwiftySyncAuthorization PUBLIC Usage PUBLIC CodablePP PUBLIC cpp-httplib)
 
-add_executable(test_auth main.cpp)
-target_link_libraries(test_auth SwiftySyncAuthorization)
+#add_executable(test_auth main.cpp)
+#target_link_libraries(test_auth SwiftySyncAuthorization)

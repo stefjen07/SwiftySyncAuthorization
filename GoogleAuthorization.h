@@ -13,11 +13,9 @@
 
 #define GOOGLE_AUTH_PREFIX "G"
 
-using namespace std;
-
 class GoogleResponse : public Codable {
 public:
-	string iss, sub, azp, aud, iat, exp;
+	std::string iss, sub, azp, aud, iat, exp;
 
 	void encode(CoderContainer* container);
 
@@ -27,12 +25,12 @@ public:
 class GoogleProvider: public AuthorizationProvider {
 public:
 #ifdef SERVER
-	string client_id;
+    std::string client_id;
 
-    AuthorizationResponse authorize(string body) {
+    AuthorizationResponse authorize(std::string body) {
         AuthorizationResponse result;
         result.status = AuthorizationStatus::error;
-        string token = body;
+        std::string token = body;
         httplib::SSLClient cli("https://oauth2.googleapis.com");
         httplib::Params params;
         params.emplace("id_token", token);
@@ -64,17 +62,17 @@ public:
         return result;
     }
 
-    bool isValid(string body) {
+    bool isValid(std::string body) {
         return body.find(GOOGLE_AUTH_PREFIX) == 0;
     }
 
-	GoogleProvider(string client_id) {
+	GoogleProvider(std::string client_id) {
 		this->client_id = client_id;
 	}
 #endif
 
 #ifdef CLIENT
-    string generateRequest(string body) {
+    std::string generateRequest(std::string body) {
         return GOOGLE_AUTH_PREFIX + body;
     }
 

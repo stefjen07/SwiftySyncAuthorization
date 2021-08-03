@@ -13,8 +13,6 @@
 
 #define FACEBOOK_AUTH_PREFIX "F"
 
-using namespace std;
-
 class FacebookResponse : public Codable {
 public:
 	long long app_id, user_id, expires_at;
@@ -27,11 +25,11 @@ public:
 class FacebookProvider: public AuthorizationProvider {
 public:
 #ifdef SERVER
-	string access_token;
-	string app_id;
+    std::string access_token;
+	std::string app_id;
 
-    AuthorizationResponse authorize(string body) {
-        string input_token = body;
+    AuthorizationResponse authorize(std::string body) {
+        std::string input_token = body;
         AuthorizationResponse result;
         result.status = AuthorizationStatus::error;
         httplib::SSLClient cli("https://graph.facebook.com");
@@ -66,18 +64,18 @@ public:
         return result;
     }
 
-    bool isValid(string body) {
+    bool isValid(std::string body) {
         return body.find(FACEBOOK_AUTH_PREFIX) == 0;
     }
 
-	FacebookProvider(string access_token, string app_id) {
+	FacebookProvider(std::string access_token, std::string app_id) {
 		this->access_token = access_token;
 		this->app_id = app_id;
 	}
 #endif
 
 #ifdef CLIENT
-    string generateRequest(string body) {
+    std::string generateRequest(std::string body) {
         return FACEBOOK_AUTH_PREFIX + body;
     }
 

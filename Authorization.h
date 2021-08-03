@@ -8,8 +8,6 @@
 #define CORR_CRED_LOCALIZE "C"
 #define AUTH_ERR_LOCALIZE "E"
 
-using namespace std;
-
 enum class AuthorizationStatus {
 	authorized,
 	corruptedCredentials,
@@ -19,9 +17,9 @@ enum class AuthorizationStatus {
 class AuthorizationResponse {
 public:
 	AuthorizationStatus status;
-	string userId;
+	std::string userId;
 
-	AuthorizationResponse(AuthorizationStatus status, string userId) {
+	AuthorizationResponse(AuthorizationStatus status, std::string userId) {
 		this->status = status;
 		this->userId = userId;
 	}
@@ -34,11 +32,11 @@ public:
 class AuthorizationProvider {
 public:
 #ifdef SERVER
-	virtual AuthorizationResponse authorize(string body) = 0;
-	virtual bool isValid(string body) = 0;
+    virtual AuthorizationResponse authorize(std::string body) = 0;
+	virtual bool isValid(std::string body) = 0;
 #endif
 #ifdef CLIENT
-	virtual string generateRequest(string body) = 0;
+	virtual std::string generateRequest(std::string body) = 0;
 #endif
 };
 
