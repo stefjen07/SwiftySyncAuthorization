@@ -6,9 +6,9 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
 #include "httplib.h"
-#include "Codable.h"
-#include "JSON.h"
-#include "Authorization.h"
+#include "Codable.hpp"
+#include "JSON.hpp"
+#include "Authorization.hpp"
 #include <string>
 
 #define GOOGLE_AUTH_PREFIX "G"

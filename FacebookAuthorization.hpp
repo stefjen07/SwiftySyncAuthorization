@@ -6,9 +6,9 @@
 #include "Usage.h"
 
 #include "httplib.h"
-#include "Authorization.h"
-#include "Codable.h"
-#include "JSON.h"
+#include "Authorization.hpp"
+#include "Codable.hpp"
+#include "JSON.hpp"
 #include <string>
 
 #define FACEBOOK_AUTH_PREFIX "F"

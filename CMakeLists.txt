@@ -15,7 +15,7 @@ else()
 endif()
 include_directories(${OPENSSL_INCLUDE_DIR})
 
-add_library(SwiftySyncAuthorization Authorization.cpp Authorization.h FacebookAuthorization.cpp FacebookAuthorization.h GoogleAuthorization.cpp GoogleAuthorization.h)
+add_library(SwiftySyncAuthorization Authorization.hpp FacebookAuthorization.cpp FacebookAuthorization.hpp GoogleAuthorization.cpp GoogleAuthorization.hpp)
 target_link_libraries(SwiftySyncAuthorization Codable ${OPENSSL_LIBRARIES})
 target_include_directories(SwiftySyncAuthorization PUBLIC Usage PUBLIC CodablePP PUBLIC cpp-httplib)
 
