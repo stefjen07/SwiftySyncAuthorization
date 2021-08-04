@@ -1,14 +1,14 @@
+#define CLIENT
+#define SERVER
+
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-#include "GoogleAuthorization.h"
-#else
-#include "Authorization.h"
+#include "GoogleAuthorization.hpp"
 #endif
-#include "FacebookAuthorization.h"
-#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-#include "Authorization.h"
-#else
-#include "GoogleAuthorization.h"
+#include "FacebookAuthorization.hpp"
+#if !(defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__))
+#include "GoogleAuthorization.hpp"
 #endif
+using namespace std;
 
 int main() {
 #ifdef CLIENT
@@ -18,9 +18,9 @@ int main() {
     cout << facebookProvider.generateRequest("hello") << "\n";
 #endif
 #ifdef SERVER
-    auto googleProvider = GoogleProvider("client_id");
-    auto facebookProvider = FacebookProvider("access_token", "app_id");
-    cout << googleProvider.isValid("G") << " " << facebookProvider.isValid("F") << "\n";
+    auto sGoogleProvider = GoogleProvider("client_id");
+    auto sFacebookProvider = FacebookProvider("access_token", "app_id");
+    cout << sGoogleProvider.isValid("G") << " " << sFacebookProvider.isValid("F") << "\n";
 #endif
 
 
