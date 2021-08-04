@@ -5,7 +5,9 @@
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
+#ifdef SERVER
 #include "httplib.h"
+#endif
 #include "Codable.hpp"
 #include "JSON.hpp"
 #include "Authorization.hpp"

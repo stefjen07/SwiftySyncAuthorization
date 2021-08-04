@@ -5,7 +5,9 @@
 
 #include "Usage.h"
 
+#ifdef SERVER
 #include "httplib.h"
+#endif
 #include "Authorization.hpp"
 #include "Codable.hpp"
 #include "JSON.hpp"
