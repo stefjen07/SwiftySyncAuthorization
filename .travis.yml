@@ -27,12 +27,13 @@ matrix:
         env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-  - source vcpkg/bootstrap-vcpkg.sh
-  - source ./vcpkg/vcpkg integrate install
+  - source $TRAVIS_BUILD_DIR/vcpkg/bootstrap-vcpkg.sh
+  - source $TRAVIS_BUILD_DIR/vcpkg/vcpkg integrate install
+  - source $TRAVIS_BUILD_DIR/vcpkg/vcpkg install
 
 script:
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DCMAKE_TOOLCHAIN_FILE=$(PWD) -DTARGET_CPU=$TARGET_CPU
+  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DCMAKE_TOOLCHAIN_FILE=$TRAVIS_BUILD_DIR/vcpkg/scripts/buildsystems/vcpkg.cmake -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - ctest --output-on-failure
