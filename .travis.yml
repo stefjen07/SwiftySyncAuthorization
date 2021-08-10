@@ -27,9 +27,10 @@ matrix:
         env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-  - source $TRAVIS_BUILD_DIR/vcpkg/bootstrap-vcpkg.sh
-  - source $TRAVIS_BUILD_DIR/vcpkg/vcpkg integrate install
-  - source $TRAVIS_BUILD_DIR/vcpkg/vcpkg install
+  - cd $TRAVIS_BUILD_DIR
+  - source ./vcpkg/bootstrap-vcpkg.sh
+  - source ./vcpkg/vcpkg integrate install
+  - source ./vcpkg/vcpkg install
 
 script:
   - mkdir build
