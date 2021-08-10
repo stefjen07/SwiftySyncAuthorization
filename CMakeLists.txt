@@ -4,7 +4,6 @@ project(SwiftySyncAuthorization)
 set(CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(CodablePP)
-add_subdirectory(cpp-httplib)
 
 if("$ENV{SYSTEM_NAME}" STREQUAL "iOS")
     link_directories($ENV{LIB_DIR})
