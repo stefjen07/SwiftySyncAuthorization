@@ -26,15 +26,23 @@ matrix:
       - os:  osx
         env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
+before_install:
+  - export CC=gcc-7 CXX=g++-7
+
 install:
-  - cd $TRAVIS_BUILD_DIR
-  - ./vcpkg/bootstrap-vcpkg.sh
-  - ./vcpkg/vcpkg integrate install
-  - ./vcpkg/vcpkg install
+  - |
+    mkdir -p ${HOME}/vcpkg
+    pushd ${HOME}/vcpkg
+    git init
+    git remote add origin https://github.com/Microsoft/vcpkg.git
+    git fetch origin
+    git checkout FETCH_HEAD
+    ./bootstrap-vcpkg.sh
 
 script:
-  - mkdir build
-  - cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DCMAKE_TOOLCHAIN_FILE=$TRAVIS_BUILD_DIR/vcpkg/scripts/buildsystems/vcpkg.cmake -DTARGET_CPU=$TARGET_CPU
+  - ./vcpkg install
+  - popd
+  - mkdir -p build && pushd build
+  - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DCMAKE_TOOLCHAIN_FILE="${HOME}/vcpkg/scripts/buildsystems/vcpkg.cmake -DTARGET_CPU=$TARGET_CPU
   - cmake --build .
   - ctest --output-on-failure
