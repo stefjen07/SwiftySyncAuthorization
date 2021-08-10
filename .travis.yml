@@ -28,9 +28,9 @@ matrix:
 
 install:
   - cd $TRAVIS_BUILD_DIR
-  - source ./vcpkg/bootstrap-vcpkg.sh
-  - source ./vcpkg/vcpkg integrate install
-  - source ./vcpkg/vcpkg install
+  - ./vcpkg/bootstrap-vcpkg.sh
+  - ./vcpkg/vcpkg integrate install
+  - ./vcpkg/vcpkg install
 
 script:
   - mkdir build
