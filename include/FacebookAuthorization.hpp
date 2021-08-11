@@ -51,9 +51,9 @@ public:
                 JSONDecoder decoder;
                 auto container = decoder.container(response->body);
                 const auto decoded = container.decode(FacebookResponse(), "data");
-                if (to_string(decoded.app_id) == app_id) {
+                if (std::to_string(decoded.app_id) == app_id) {
                     result.status = AuthorizationStatus::authorized;
-                    result.userId = FACEBOOK_AUTH_PREFIX + to_string(decoded.user_id);
+                    result.userId = FACEBOOK_AUTH_PREFIX + std::to_string(decoded.user_id);
                 }
             }
             else {
