@@ -1,8 +1,6 @@
 #ifndef GOOGLE_AUTHORIZATION_H 
 #define GOOGLE_AUTHORIZATION_H
 
-#include "Usage.h"
-
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
 #ifdef SERVER

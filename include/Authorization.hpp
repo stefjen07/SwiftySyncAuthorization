@@ -1,7 +1,6 @@
 #ifndef AUTHORIZATION_H
 #define AUTHORIZATION_H
 
-#include "Usage.h"
 #include <string>
 
 #define AUTHORIZED_LOCALIZE "S"

@@ -3,8 +3,6 @@
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 
-#include "Usage.h"
-
 #ifdef SERVER
 #include "httplib.h"
 #endif
