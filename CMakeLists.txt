@@ -8,6 +8,7 @@ set(OPENSSL_INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/openssl-cmake/include)
 set(OPENSSL_LIBRARIES ssl crypto)
 add_subdirectory(CodablePP)
 
+include_directories(include)
 include_directories(${OPENSSL_INCLUDE_DIR})
 
 add_library(SwiftySyncAuthorization include/Authorization.hpp src/FacebookAuthorization.cpp include/FacebookAuthorization.hpp src/GoogleAuthorization.cpp include/GoogleAuthorization.hpp)
