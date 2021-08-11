@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CodablePP" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cpp-httplib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/openssl-cmake" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vcpkg" vcs="Git" />
   </component>
 </project>
