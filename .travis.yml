@@ -1,15 +1,9 @@
 language: cpp
 
 os:
-#  - windows
+  - windows
   - linux
   - osx
-
-addons:
-  apt:
-    packages: openssl
-  homebrew:
-    packages: openssl
 
 compiler:
   - gcc
